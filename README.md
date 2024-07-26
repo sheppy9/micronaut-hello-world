@@ -1,5 +1,4 @@
 ## Micronaut 4.4.2 Documentation
-
 - [User Guide](https://docs.micronaut.io/4.4.2/guide/index.html)
 - [API Reference](https://docs.micronaut.io/4.4.2/api/index.html)
 - [Configuration Reference](https://docs.micronaut.io/4.4.2/guide/configurationreference.html)
@@ -12,37 +11,44 @@
 - [GraalVM Gradle Plugin documentation](https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html)
 
 ## Feature serialization-jackson documentation
-
 - [Micronaut Serialization Jackson Core documentation](https://micronaut-projects.github.io/micronaut-serialization/latest/guide/)
 
 ## Feature micronaut-aot documentation
-
 - [Micronaut AOT documentation](https://micronaut-projects.github.io/micronaut-aot/latest/guide/)
 
 # Running app
-
-```
+```bash
 ./gradlew run
 ```
 
-# Example
-
-### GET rquest
-
+# Building app
+```bash
+./gradlew clean shadowJar
 ```
-// Get multiple element
+
+# Building docker image
+```bash
+docker build . -t micronaut-hello-world:v0.0.1 --no-cache --progress=plain
+```
+
+# Example
+### GET rquest
+```bash
+# Get multiple element
 http://localhost:8080/fruit/api/all
 
-// Get single element
+# Get single element
 http://localhost:8080/fruit/api/{id}
+
+# Example GET request
+curl http://localhost:8080/fruit/api/all
 ```
 
 ### POST
-
-```
+```bash
 http://localhost:8080/fruit/api/newFruit
 
-// Body
+# Body
 {
   "name": "pear",
   "price": 4.4
@@ -50,10 +56,10 @@ http://localhost:8080/fruit/api/newFruit
 ```
 
 ### PUT
-
-```
+```bash
 http://localhost:8080/fruit/api/4
 
+# Body
 {
   "name": "mango",
   "price": 5.5
@@ -61,7 +67,6 @@ http://localhost:8080/fruit/api/4
 ```
 
 ### DELETE
-
-```
+```bash
 http://localhost:8080/fruit/api/4
 ```
