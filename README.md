@@ -31,6 +31,23 @@
 docker build . -t micronaut-hello-world:v0.0.1 --no-cache --progress=plain
 ```
 
+# Running docker image
+```bash
+# Create a container with the given image
+# `-d` - Run in detached mode (in the background)
+# If :v0.0.1 is not provided, docker will default to "latest"
+docker run -d -p 8080:8080 micronaut-hello-world:v0.0.1
+```
+
+# Moving from development to production
+```bash
+# Exporting docker image
+docker save micronaut-hello-world:v0.0.1 > micronaut-hello-world.tar
+
+# Loading from saved image
+docker load < micronaut-hello-world.tar
+```
+
 # Example
 ### GET rquest
 ```bash
