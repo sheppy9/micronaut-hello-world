@@ -87,3 +87,7 @@ http://localhost:8080/fruit/api/4
 ```bash
 http://localhost:8080/fruit/api/4
 ```
+
+# Common issue
+## gradlew: not found
+- Ensure gradlew is saved with `LF` line sequence instead of `CRLF`
