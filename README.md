@@ -62,7 +62,7 @@ http://localhost:8080/fruit/api/all
 # Get single element
 http://localhost:8080/fruit/api/{id}
 
-# Example GET request
+# Example cURL GET request
 curl http://localhost:8080/fruit/api/all
 ```
 
@@ -75,6 +75,9 @@ http://localhost:8080/fruit/api/newFruit
   "name": "pear",
   "price": 4.4
 }
+
+# Example cURL POST request
+curl -H "Content-Type: application/json" -X POST -d '{"name": "pear", "price": 4.4}' http://localhost:8080/fruit/api/newFruit
 ```
 
 ### PUT
@@ -86,11 +89,17 @@ http://localhost:8080/fruit/api/4
   "name": "mango",
   "price": 5.5
 }
+
+# Example cURL PUT request
+curl -H "Content-Type: application/json" -X PUT -d '{"name": "mango", "price": 5.5}' http://localhost:8080/fruit/api/4
 ```
 
 ### DELETE
 ```bash
 http://localhost:8080/fruit/api/4
+
+# Example cURL DELETE request
+curl -X DELETE http://localhost:8080/fruit/api/4
 ```
 
 # Common issue
